@@ -6,13 +6,15 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:52:24 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/21 12:30:13 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/21 18:01:22 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
+#include "stddef.h"
 
-void    ft_bzero(void *s, size_t n)
+void ft_bzero(void *s, size_t n)
 {
-        ft_memset(s, 0, n);
+	unsigned char *ptr = (unsigned char *)s;
+	while (n--)
+		*ptr++ = 0;
 }

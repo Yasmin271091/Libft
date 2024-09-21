@@ -6,11 +6,13 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:29:54 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/18 16:32:47 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/21 18:01:18 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int ft_isalnum(int c)
 {
-    return (ft_isalpha(c) || ft_isgigit(c));
+    if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+        return (1);
+    return (0);
 }

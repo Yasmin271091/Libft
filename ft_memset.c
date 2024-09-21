@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:37:18 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/19 18:50:29 by marvin           ###   ########.fr       */
+/*   Updated: 2024/09/21 17:41:12 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdlib.h"
 
-void    *ft_memset(void *b, int c, size_t n)
+void    *ft_memset(void *s, int c, size_t n)
 {
-    unsigned char *ptr = (unsigned char *)b;
+    unsigned char *ptr = (unsigned char *)s;
     while (n--)
         *ptr ++ = (unsigned char)c;
-    return b;
+    return s;
 }
