@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 17:59:34 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/21 15:32:01 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/21 12:52:05 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/21 13:11:26 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdlib.h"
 
-void    *ft_memcpy(void *dest, const void *src, size_t n)
+void    *ft_memchr(const void *s, int c, size_t n)
 {
-    unsigned char *d = (unsigned char *)dest;
-    const unsigned char *s = (const unsigned char *)src;
-    if(d == s || n == 0)
-        return dest;
-        
-    while(n--)
-        *d++ = *s++;
-    return dest;
+    unsigned char *ptr = (unsigned char *)s;
+    while (n --)
+    {
+        if (*ptr == (unsigned char)c)
+            return ptr;
+        ptr++;
+    }
+    return (NULL);
 }

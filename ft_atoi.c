@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 17:59:34 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/21 15:32:01 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/21 13:49:34 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/21 15:32:09 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
-
-void    *ft_memcpy(void *dest, const void *src, size_t n)
+int *ft_atoi(const char *str)
 {
-    unsigned char *d = (unsigned char *)dest;
-    const unsigned char *s = (const unsigned char *)src;
-    if(d == s || n == 0)
-        return dest;
-        
-    while(n--)
-        *d++ = *s++;
-    return dest;
+    int sign = 1;
+    int result = 0;
+
+    while ((*str >= 9 && *str <= 13) || *str == ' ')
+        str++;
+    if (*str == '-' || *str == '+')
+    {
+        if (*str == '-')
+            sign = -1;
+        str++;
+    }
+    while (*str >= '0' && *str <= '9')
+    {
+        result = result * 10 + (*str - '0');
+            str++;
+    }
+    return result * sign;
 }
