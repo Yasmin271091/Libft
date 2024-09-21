@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   .c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 17:52:24 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/21 12:30:13 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/21 11:54:26 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/21 11:54:26 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdlib.h"
 
-void    ft_bzero(void *s, size_t n)
+char    *ft_strrchr(const char *s, int c)
 {
-        ft_memset(s, 0, n);
+    const char *last = NULL;
+    while (*s)
+    {
+        if (*s == (char)c)
+            last = s;
+        s++;
+    }
+    if (c == '\0')
+        return (char *)s;
+    return (char *)last;
 }

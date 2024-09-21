@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 17:52:24 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/21 12:30:13 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/21 11:22:56 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/21 11:35:08 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdlib.h"
 
-void    ft_bzero(void *s, size_t n)
+int    *ft_strncmp(char *s1, const char *s2, size_t n)
 {
-        ft_memset(s, 0, n);
+    while (n && (*s1 || *s2))
+    {
+        if (*s1 != *s2)
+            return ((unsigned char)*s1 - (unsigned char)*s2);
+            s1++;
+            s2++;
+            n++;
+    }
+    return(0);
 }
