@@ -6,7 +6,7 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:59:34 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 13:11:47 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:09:06 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*d++ = *s++;
 	return (dest);
 }
-
-

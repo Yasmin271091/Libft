@@ -6,7 +6,7 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:36:37 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 13:09:41 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:05:12 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(ptr, count * size);
 	return (ptr);
 }
-

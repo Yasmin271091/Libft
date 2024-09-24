@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/24 17:11:42 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/24 18:05:40 by yasjimen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 #include <stddef.h>
 #define LIBFT_H
@@ -25,4 +37,5 @@ char    *ft_strnstr(const char *haystack, const char *needle, size_t n);
 int	ft_atoi(const char *str);
 void    *ft_calloc(size_t count, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(char const *s1, char const *s2);
 #endif

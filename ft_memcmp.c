@@ -6,7 +6,7 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 13:12:05 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 13:11:28 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:08:34 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-

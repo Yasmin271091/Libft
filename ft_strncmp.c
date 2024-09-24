@@ -6,7 +6,7 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 11:22:56 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 13:14:31 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:12:06 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-

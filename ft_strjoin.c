@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 13:49:34 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 18:05:30 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/24 16:41:40 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/24 18:10:50 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-int	ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	sign;
-	int	result;
+	char	*joined;
+	size_t	len1;
+	size_t	len2;
 
-	sign = 1;
-	result = 0;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + (*str - '0');
-		str++;
-	}
-	return (result * sign);
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = strlen(s1);
+	len2 = strlen(s2);
+	joined = (char *)malloc(len1 + len2 + 1);
+	if (!joined)
+		return (NULL);
+	strcpy(joined, s1);
+	strcat(joined, s2);
+	return (joined);
 }

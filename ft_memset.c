@@ -6,19 +6,19 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:37:18 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/24 13:12:18 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:09:45 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    unsigned char *ptr;
+	unsigned char	*ptr;
 
-    ptr = (unsigned char *)s;
-    while (n--)
-        *ptr++ = (unsigned char)c;
-    return (s);
+	ptr = (unsigned char *)s;
+	while (n--)
+		*ptr++ = (unsigned char)c;
+	return (s);
 }
