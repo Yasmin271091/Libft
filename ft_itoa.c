@@ -1,25 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 15:36:37 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/26 11:44:36 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/26 13:23:10 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/26 14:29:36 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+static int	get_num_len(int n)
 {
-	void	*ptr;
+	int	len;
 
-	ptr = malloc(count * size);
-	if (!ptr)
+	len = 1;
+	if (n < 0)
+		len++;
+	while (n / 10 != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		len;
+	long	num;
+
+	num = n;
+	len = get_num_len(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
 		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
+	str[len] = '\0';
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
+	while (num > 0)
+	{
+		str[--len] = (num % 10) + '0';
+		num /= 10;
+	}
+	if (n == 0)
+		str[0] = '0';
+	return (str);
 }

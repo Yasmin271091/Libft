@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/24 16:41:40 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/26 11:42:03 by yasjimen         ###   ########.fr       */
+/*   Created: 2024/09/26 11:45:50 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/26 12:12:14 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static int	is_in_set(char c, char const *set)
 {
-	char	*joined;
-	size_t	len1;
-	size_t	len2;
+	while (*set)
+	{
+		if (*set == c)
+			return (1);
+		set++;
+	}
+	return (0);
+}
 
-	if (!s1 || !s2)
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	start;
+	size_t	end;
+
+	if (!s1 || !set)
 		return (NULL);
-	len1 = strlen(s1);
-	len2 = strlen(s2);
-	joined = (char *)malloc(len1 + len2 + 1);
-	if (!joined)
-		return (NULL);
-	strcpy(joined, s1);
-	strcat(joined, s2);
-	return (joined);
+	start = 0;
+	end = ft_strlen(s1);
+	while (s1[start] && is_in_set(s1[start], set))
+		start++;
+	while (end > start && is_in_set(s1[end - 1], set))
+		end--;
+	return (ft_substr(s1, start, end - start));
 }
