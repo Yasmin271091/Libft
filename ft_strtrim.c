@@ -6,12 +6,12 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 11:45:50 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/26 12:12:14 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/27 11:59:36 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
 static int	is_in_set(char c, char const *set)
 {

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 20:52:12 by marvin            #+#    #+#             */
-/*   Updated: 2024/09/26 20:52:12 by marvin           ###   ########.fr       */
+/*   Created: 2024/09/27 11:43:02 by yasjimen          #+#    #+#             */
+/*   Updated: 2024/09/27 11:43:02 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-        if(!s)
-            return;
-        while (*s)
-            write(fd, s++, 1);
-        write(fd, "\n", 1);
+	if (!s)
+		return ;
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }
