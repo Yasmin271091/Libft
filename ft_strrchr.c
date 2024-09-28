@@ -6,7 +6,7 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 18:13:08 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/26 11:43:02 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:10:24 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == (unsigned char)c)
 			last = s;
 		s++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)s);
 	return ((char *)last);
 }

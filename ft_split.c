@@ -6,7 +6,7 @@
 /*   By: yasjimen <yasjimen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 12:12:57 by yasjimen          #+#    #+#             */
-/*   Updated: 2024/09/27 12:00:18 by yasjimen         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:37:54 by yasjimen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,19 @@ static size_t	count_words(char const *s, char c)
 			i++;
 	}
 	return (count);
+}
+
+static void	free_split(char **split_array, size_t words)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < words)
+	{
+		free(split_array[i]);
+		i++;
+	}
+	free(split_array);
 }
 
 static char	*get_words(char const *s, char c, size_t *index)
@@ -64,8 +77,11 @@ char	**ft_split(char const *s, char c)
 	while (i < words)
 	{
 		split_array[i] = get_words(s, c, &index);
-		if (!split_array)
+		if (!split_array[i])
+		{
+			free_split(split_array, i);
 			return (NULL);
+		}
 		i++;
 	}
 	split_array[i] = NULL;
