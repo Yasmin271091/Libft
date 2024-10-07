@@ -18,10 +18,18 @@ int	main(void)
 	size_t	count;
 	size_t	size;
 	char	*ptr;
+	size_t	i;
 
-	size = 4;
+	size = 1;
 	count = 7;
 	ptr = ft_calloc(count, size);
-	printf("%s\n", ptr);
+	i = 0;
+	while (i < count - 1) 
+	{
+		ptr[i] = 'A' + i; 
+		i++;
+	}
+	ptr[count - 1] = '\0';
+	printf("%s\n", ptr); 
 	return(0);
 }

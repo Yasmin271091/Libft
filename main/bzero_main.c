@@ -14,12 +14,9 @@
 #include <string.h> 
 #include <stddef.h>
 
-void ft_bzero(void *s, size_t n);
-
 int main(void)
 {
     char str[50] = "Hello, World!";
-    ft_bzero(str, 6);
-    printf("Resultado: '%s'\n", str); 
+    printf("Resultado: '%s'\n", str + 7); 
     return 0;
 }

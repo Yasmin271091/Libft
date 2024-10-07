@@ -18,7 +18,7 @@ int	main(void)
 {
 	int	n;
 
-	n = 0;
+	n = -42;
 	printf("%s\n", ft_itoa(n));
 	return (0);
 }
